@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-export default function Home() {
+export default function Home() { 
   return (
     <main className="p-8">
       <h1 className="text-2xl font-bold mb-4">Auto Warranty CRM — Frontend (Scaffold)</h1>
