@@ -13,6 +13,7 @@ import {
   readToken,
   storeToken,
 } from '@/lib/auth'
+import { waitForMocking } from '@/lib/mockReady'
 
 export default function LoginPage() {
   const router = useRouter()
@@ -26,7 +27,8 @@ export default function LoginPage() {
     const token = readToken()
     if (!token) return
 
-    getCurrentUser(token)
+    waitForMocking()
+      .then(() => getCurrentUser(token))
       .then((user) => router.replace(landingRouteForRoles(user.roles)))
       .catch(() => {
         // stale/invalid token — let the user sign in again

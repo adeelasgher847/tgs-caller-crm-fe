@@ -3,6 +3,7 @@
 import { ReactNode, useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { clearToken, getCurrentUser, readToken, Role } from '@/lib/auth'
+import { waitForMocking } from '@/lib/mockReady'
 
 type Status = 'checking' | 'authorized'
 
@@ -19,7 +20,8 @@ function useAuthorization(isAllowed: (roles: Role[]) => boolean) {
       return
     }
 
-    getCurrentUser(token)
+    waitForMocking()
+      .then(() => getCurrentUser(token))
       .then((user) => {
         if (cancelled) return
         if (!isAllowed(user.roles)) {
