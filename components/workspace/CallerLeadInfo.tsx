@@ -12,7 +12,7 @@ function CheckIcon() {
 
 export function CallerLeadInfo() {
   return (
-    <div className="rounded-xl border border-slate/20 bg-white p-5">
+    <div className="rounded-xl border border-slate/20 bg-white p-6">
       <h2 className="text-base font-semibold text-ink">Caller / Lead Info</h2>
       <p className="mt-3 text-sm leading-relaxed text-slate">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
