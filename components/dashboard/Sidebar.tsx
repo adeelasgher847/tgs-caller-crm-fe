@@ -146,19 +146,18 @@ export function Sidebar() {
           mobileOpen ? 'translate-x-0' : '-translate-x-full'
         } ${collapsed ? 'lg:w-16' : 'w-72 lg:w-72'}`}
       >
-        <div className="flex items-center gap-3 px-4 py-4">
-          <div className="h-10 w-10 flex-shrink-0 rounded-full bg-slate/15" aria-hidden />
-          {!collapsed && (
-            <div className="min-w-0 flex-1">
-              <p className="truncate text-sm font-semibold text-ink">{user?.name ?? '[NAME]'}</p>
-              <p className="truncate text-xs text-slate">CRM — Fronter</p>
-            </div>
-          )}
+        <div
+          className={`flex py-4 ${
+            collapsed ? 'lg:flex-col lg:items-center lg:gap-2 lg:py-3 lg:px-2 px-4' : 'items-center gap-3 px-4'
+          }`}
+        >
           <button
             type="button"
             onClick={() => setCollapsed((prev) => !prev)}
             aria-label={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
-            className="hidden flex-shrink-0 items-center justify-center rounded-md p-1 text-slate hover:bg-slate/10 hover:text-ink lg:flex"
+            className={`hidden flex-shrink-0 items-center justify-center rounded-md p-1 text-slate hover:bg-slate/10 hover:text-ink lg:flex ${
+              collapsed ? '' : 'order-last'
+            }`}
           >
             <img
               src="/elements/collapse.png"
@@ -167,9 +166,16 @@ export function Sidebar() {
               className={`h-4 w-4 transition-transform ${collapsed ? 'rotate-180' : ''}`}
             />
           </button>
+          <div className="h-10 w-10 flex-shrink-0 rounded-full bg-slate/15" aria-hidden />
+          {!collapsed && (
+            <div className="min-w-0 flex-1">
+              <p className="truncate text-sm font-semibold text-ink">{user?.name ?? '[NAME]'}</p>
+              <p className="truncate text-xs text-slate">CRM — Fronter</p>
+            </div>
+          )}
         </div>
 
-        <nav className="flex-1 space-y-1 px-3 py-4">
+        <nav className={`flex-1 space-y-1 py-4 ${collapsed ? 'lg:py-3 lg:px-2 px-3' : 'px-3'}`}>
           {NAV_ITEMS.map(({ href, label, icon: Icon }) => {
             const active = href === '/fronter' ? pathname === '/fronter' : pathname.startsWith(href)
             return (
@@ -177,8 +183,8 @@ export function Sidebar() {
                 key={href}
                 href={href}
                 title={collapsed ? label : undefined}
-                className={`flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium leading-[150%] transition ${
-                  collapsed ? 'lg:justify-center' : ''
+                className={`flex items-center gap-3 rounded-lg text-sm font-medium leading-[150%] transition ${
+                  collapsed ? 'lg:justify-center lg:px-2 lg:py-2 px-3 py-2.5' : 'px-3 py-2.5'
                 } ${active ? 'bg-nav-active text-navy' : 'text-slate hover:bg-slate/10 hover:text-ink'}`}
               >
                 <Icon />
@@ -188,24 +194,28 @@ export function Sidebar() {
           })}
         </nav>
 
-        <div className="border-t border-slate/15 px-3 py-4">
+        <div className={`border-t border-slate/15 py-4 ${collapsed ? 'lg:py-3 lg:px-2 px-3' : 'px-3'}`}>
           <div
-            className={`flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-ink ${
-              collapsed ? 'lg:justify-center' : 'justify-between'
+            className={`flex items-center gap-3 rounded-lg py-2.5 text-sm font-medium text-ink ${
+              collapsed ? 'lg:justify-center lg:px-2 px-3' : 'justify-between px-3'
             }`}
           >
             <span className="flex items-center gap-3">
               <BellIcon />
               <span className={collapsed ? 'lg:hidden' : ''}>Notification</span>
             </span>
-            <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-status-red text-xs font-semibold text-white">
+            <span
+              className={`flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-status-red text-xs font-semibold text-white ${
+                collapsed ? 'lg:hidden' : ''
+              }`}
+            >
               2
             </span>
           </div>
 
           <div
-            className={`mt-2 flex items-center gap-3 rounded-lg px-3 py-2.5 ${
-              collapsed ? 'lg:justify-center' : ''
+            className={`mt-2 flex items-center gap-3 rounded-lg py-2.5 ${
+              collapsed ? 'lg:justify-center lg:px-2 px-3' : 'px-3'
             }`}
           >
             <div className="h-10 w-10 flex-shrink-0 rounded-full bg-slate/20" aria-hidden />

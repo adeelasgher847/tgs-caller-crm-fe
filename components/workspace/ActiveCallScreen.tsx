@@ -44,7 +44,6 @@ export function ActiveCallScreen({ interactionId }: { interactionId: string }) {
             <h1 className="text-2xl font-semibold tracking-tight text-ink">Active Call</h1>
             <LiveCallBadge />
           </div>
-          <p className="mx-auto mt-1 max-w-6xl font-mono text-xs text-slate">{interactionId}</p>
         </div>
 
         <div className="mx-auto max-w-6xl px-6 py-6">
