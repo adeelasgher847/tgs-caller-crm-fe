@@ -57,8 +57,16 @@ Frontend pieces:
 - Shared primitives live in `components/ui/` (`Input`, `Button`, `Alert`).
   Reuse these instead of inlining `<input>`/`<button>` markup — extend them
   with props rather than duplicating styles.
-- Visual theme: dark (`bg-neutral-950`), teal accents (`teal-400`→`teal-600`
-  gradients), not blue/indigo — that was tried and explicitly rejected.
+- Visual theme (as of the Figma "CRM - Auto Warranty" file, superseding the
+  earlier dark/teal theme): light (`bg-paper` `#FCFCFC`), `ink` (`#1C2430`)
+  for headings/dark surfaces, `navy` (`#1F3A5F`) for primary CTAs, `slate`
+  (`#8A94A3`) for borders/placeholders/secondary text. `status-red`/
+  `status-green`/`status-gold`/`status-blue` are accent/status colors only,
+  not for primary CTAs. Tokens are defined in `tailwind.config.js`. Font is
+  Inter, loaded via `next/font/google` in `app/layout.tsx` (`--font-inter`),
+  on a 61/49/39/32/23/20/18/16/14/13px type scale (base 16, ~1.125 ratio,
+  120% line-height). `Button` takes a `variant` prop (`primary` navy-filled /
+  `secondary` slate-outlined) and a `size` prop (`default` / `small`).
 - Errors (auth failures, form validation) render inline via `<Alert>` /
   `role="alert"` — never fail silently or let an unhandled rejection crash
   the page.

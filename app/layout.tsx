@@ -1,5 +1,8 @@
+import { Inter } from 'next/font/google'
 import '../styles/globals.css'
 import MockProvider from './providers/MockProvider'
+
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
 export const metadata = {
   title: 'Auto Warranty CRM',
@@ -8,8 +11,8 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className="min-h-screen bg-gray-50 text-gray-800">
+    <html lang="en" className={inter.variable}>
+      <body className="min-h-screen bg-paper font-sans text-ink">
         <MockProvider>{children}</MockProvider>
       </body>
     </html>

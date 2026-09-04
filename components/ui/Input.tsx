@@ -1,11 +1,12 @@
-import { InputHTMLAttributes, forwardRef, useId } from 'react'
+import { InputHTMLAttributes, ReactNode, forwardRef, useId } from 'react'
 
 type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   label: string
+  endAdornment?: ReactNode
 }
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
-  { label, id, className = '', ...props },
+  { label, id, className = '', endAdornment, ...props },
   ref
 ) {
   const generatedId = useId()
@@ -13,15 +14,20 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
 
   return (
     <div>
-      <label htmlFor={inputId} className="mb-1.5 block text-sm font-medium text-neutral-300">
+      <label htmlFor={inputId} className="mb-1.5 block text-sm font-medium text-ink">
         {label}
       </label>
-      <input
-        ref={ref}
-        id={inputId}
-        className={`block w-full rounded-lg border border-white/10 bg-white/5 px-3.5 py-2.5 text-sm text-white placeholder-neutral-500 shadow-sm transition focus:border-teal-400/60 focus:outline-none focus:ring-2 focus:ring-teal-400/30 ${className}`}
-        {...props}
-      />
+      <div className="relative">
+        <input
+          ref={ref}
+          id={inputId}
+          className={`block w-full rounded-lg border border-slate/40 bg-paper px-4 py-3 text-sm text-ink placeholder-slate shadow-sm transition focus:border-status-blue focus:outline-none focus:ring-2 focus:ring-status-blue/30 ${endAdornment ? 'pr-11' : ''} ${className}`}
+          {...props}
+        />
+        {endAdornment && (
+          <div className="absolute inset-y-0 right-0 flex items-center pr-3">{endAdornment}</div>
+        )}
+      </div>
     </div>
   )
 })
