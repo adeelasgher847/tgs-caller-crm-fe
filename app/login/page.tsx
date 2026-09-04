@@ -91,7 +91,7 @@ export default function LoginPage() {
   }
 
   return (
-    <main className="relative flex min-h-screen items-center justify-end overflow-hidden bg-ink px-6 py-12 lg:px-16">
+    <main className="relative flex h-screen items-center justify-end overflow-hidden bg-ink px-6 py-6 lg:px-16">
       <img
         src="/hero-section-login.jpg"
         alt=""
@@ -101,7 +101,7 @@ export default function LoginPage() {
       />
       <div aria-hidden className="fixed inset-0 bg-ink/30" />
 
-      <div className="relative z-10 w-full max-w-md rounded-2xl bg-paper p-8 shadow-2xl sm:p-10">
+      <div className="relative z-10 max-h-full w-full max-w-md overflow-y-auto rounded-2xl bg-paper p-8 shadow-2xl sm:p-10">
         <div className="mb-4 h-14 w-14 rounded-xl bg-slate/15" aria-hidden />
 
         <h1 className="text-2xl font-semibold tracking-tight text-ink">Welcome Back</h1>
@@ -142,7 +142,7 @@ export default function LoginPage() {
                 <button
                   type="button"
                   onClick={() => setShowPassword((v) => !v)}
-                  className="text-slate hover:text-ink"
+                  className="text-slate transition-colors hover:text-ink"
                   aria-label={showPassword ? 'Hide password' : 'Show password'}
                 >
                   <EyeIcon open={showPassword} />
@@ -152,11 +152,14 @@ export default function LoginPage() {
           </div>
 
           <div className="mb-6 flex items-center justify-between">
-            <label className="flex items-center gap-2 text-sm text-ink">
-              <input type="checkbox" className="h-4 w-4 rounded border-slate/40 text-ink" />
+            <label className="flex cursor-pointer items-center gap-2 text-sm text-ink">
+              <input
+                type="checkbox"
+                className="h-4 w-4 cursor-pointer rounded border-slate/40 accent-navy transition-colors hover:border-ink focus:ring-2 focus:ring-status-blue/30"
+              />
               Remember me
             </label>
-            <a href="#" className="text-sm font-medium text-navy hover:underline">
+            <a href="#" className="text-sm font-medium text-navy transition-colors hover:text-ink hover:underline">
               Forgot Password?
             </a>
           </div>
@@ -179,7 +182,7 @@ export default function LoginPage() {
 
         <p className="mt-6 text-center text-sm text-slate">
           Don&apos;t have an account?{' '}
-          <a href="#" className="font-medium text-navy hover:underline">
+          <a href="#" className="font-medium text-navy transition-colors hover:text-ink hover:underline">
             Sign up here
           </a>
         </p>
