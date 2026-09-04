@@ -71,6 +71,22 @@ Frontend pieces:
   `role="alert"` — never fail silently or let an unhandled rejection crash
   the page.
 
+### Design source & known component specs
+
+Source of truth for layout/spacing/typography is the Figma file
+"CRM - Auto Warranty" (design.figma.com, file key `4lOil7SfItqviZwsYhi7ec`).
+Pull exact values from Figma's Properties panel (Layout/Content/Typography/
+Colors sections) rather than eyeballing screenshots — dev-mode inspection
+gives px-accurate specs. Known specs pulled so far:
+
+- **Notification (bell icon + label + unread-count badge)**, used in the
+  active-call sidebar header: label frame is `77×21px` (hug), text style
+  "Label 1" — Inter 400, 14px, 150% line-height, 0% letter-spacing, color
+  `#2C2C2C` (not the `ink` token — check before assuming it maps 1:1).
+  Sits next to a circular unread-count badge (`status-red` fill, white
+  numeral) and a user identity block (avatar, name, email, sign-out icon)
+  further down the same panel.
+
 ## Route-segment conventions (App Router)
 
 Segments should carry their own `layout.tsx` for segment-specific metadata

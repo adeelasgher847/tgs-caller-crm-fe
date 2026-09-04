@@ -15,7 +15,7 @@ export function DispositionCard() {
 
   return (
     <div className="rounded-xl border border-slate bg-white p-6" style={{ borderWidth: '0.5px' }}>
-      <h2 className="text-lg font-medium leading-[120%] text-ink">Disposition</h2>
+      <h2 className="border-b border-slate/20 pb-4 text-lg font-medium leading-[120%] text-ink">Disposition</h2>
       <div className="mt-4">
         <select
           aria-label="Select disposition"

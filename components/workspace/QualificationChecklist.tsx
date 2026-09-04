@@ -15,7 +15,7 @@ export function QualificationChecklist() {
 
   return (
     <div className="rounded-xl border border-slate bg-white p-6" style={{ borderWidth: '0.5px' }}>
-      <h2 className="text-lg font-medium leading-[120%] text-ink">Qualification Checklist</h2>
+      <h2 className="border-b border-slate/20 pb-4 text-lg font-medium leading-[120%] text-ink">Qualification Checklist</h2>
 
       <div className="mt-5 space-y-5">
         <Input

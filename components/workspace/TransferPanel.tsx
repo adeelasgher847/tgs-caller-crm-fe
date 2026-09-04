@@ -14,7 +14,7 @@ export function TransferPanel() {
 
   return (
     <div className="rounded-xl border border-slate bg-white p-6" style={{ borderWidth: '0.5px' }}>
-      <h2 className="text-lg font-medium leading-[120%] text-ink">Transfer</h2>
+      <h2 className="border-b border-slate/20 pb-4 text-lg font-medium leading-[120%] text-ink">Transfer</h2>
 
       <p className="mt-4 text-sm font-medium text-ink">Available Closers</p>
       <ClosersTable closers={MOCK_CLOSERS} />
