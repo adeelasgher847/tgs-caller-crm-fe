@@ -12,18 +12,22 @@ function CheckIcon() {
 
 export function CallerLeadInfo() {
   return (
-    <div className="rounded-xl border border-slate/20 bg-white p-6">
-      <h2 className="text-base font-semibold text-ink">Caller / Lead Info</h2>
-      <p className="mt-3 text-sm leading-relaxed text-slate">
+    <div className="rounded-xl border border-slate bg-white p-6" style={{ borderWidth: '0.5px' }}>
+      <h2 className="border-b border-slate/20 pb-4 text-lg font-medium leading-[120%] text-ink">
+        Caller / Lead Info
+      </h2>
+      <p className="mt-4 text-base leading-[150%] text-[#656565]">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
         ut labore et dolore magna aliqua. Ut enim ad minim veniam,
       </p>
       <div className="mt-4 flex flex-wrap items-center gap-2">
-        <span className="inline-flex items-center gap-1.5 rounded-full border border-status-green/30 bg-status-green/10 px-3 py-1 text-xs font-medium text-status-green">
-          <CheckIcon />
+        <span className="inline-flex items-center gap-1.5 rounded-lg border border-[#EFEFEF] bg-white px-3 py-2 text-xs font-medium text-ink">
+          <span className="text-status-green">
+            <CheckIcon />
+          </span>
           Phone Matched
         </span>
-        <span className="inline-flex items-center gap-1 rounded-full border border-slate/30 px-3 py-1 text-xs font-medium text-slate">
+        <span className="inline-flex items-center gap-1 rounded-lg border border-[#EFEFEF] bg-white px-3 py-2 text-xs font-medium text-ink">
           Source: <span className="text-ink">VICIdial</span>
         </span>
       </div>

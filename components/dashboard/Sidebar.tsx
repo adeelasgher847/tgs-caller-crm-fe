@@ -144,7 +144,7 @@ export function Sidebar() {
       <aside
         className={`fixed inset-y-0 left-0 z-50 flex h-full flex-shrink-0 flex-col border-r border-slate/15 bg-white transition-transform duration-200 ease-in-out lg:static lg:z-auto lg:translate-x-0 ${
           mobileOpen ? 'translate-x-0' : '-translate-x-full'
-        } ${collapsed ? 'lg:w-16' : 'w-82 lg:w-82'}`}
+        } ${collapsed ? 'lg:w-16' : 'w-72 lg:w-72'}`}
       >
         <div className="flex items-center gap-3 border-b border-slate/15 px-4 py-4">
           <div className="h-10 w-10 flex-shrink-0 rounded-full bg-slate/15" aria-hidden />
@@ -179,7 +179,7 @@ export function Sidebar() {
                 title={collapsed ? label : undefined}
                 className={`flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition ${
                   collapsed ? 'lg:justify-center' : ''
-                } ${active ? 'bg-navy/10 text-navy' : 'text-slate hover:bg-slate/10 hover:text-ink'}`}
+                } ${active ? 'bg-nav-active text-navy' : 'text-slate hover:bg-slate/10 hover:text-ink'}`}
               >
                 <Icon />
                 <span className={collapsed ? 'lg:hidden' : ''}>{label}</span>

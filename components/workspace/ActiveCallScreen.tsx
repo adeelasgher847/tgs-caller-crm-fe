@@ -23,11 +23,11 @@ function LiveCallBadge() {
 
   return (
     <div className="flex items-center gap-3">
-      <span className="inline-flex items-center gap-1.5 rounded-full bg-status-red/10 px-2.5 py-1 text-xs font-medium text-status-red">
+      <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-2.5 py-1 text-xs font-medium text-status-red">
         <span className="h-1.5 w-1.5 rounded-full bg-status-red" />
         Live
       </span>
-      <span className="text-sm text-slate">on call — {formatElapsed(elapsed)}</span>
+      <span className="text-sm text-ink">on call — {formatElapsed(elapsed)}</span>
     </div>
   )
 }
@@ -35,15 +35,20 @@ function LiveCallBadge() {
 export function ActiveCallScreen({ interactionId }: { interactionId: string }) {
   return (
     <RequireRole role="fronter">
-      <main className="min-h-screen bg-shop-floor px-10 py-10">
-        <div className="mx-auto max-w-6xl">
-          <div className="flex items-center justify-between">
+      <main className="min-h-screen bg-shop-floor">
+        <div
+          className="border-b border-slate px-6 py-6"
+          style={{ borderBottomWidth: '0.5px' }}
+        >
+          <div className="mx-auto flex max-w-6xl items-center justify-between">
             <h1 className="text-2xl font-semibold tracking-tight text-ink">Active Call</h1>
             <LiveCallBadge />
           </div>
-          <p className="mt-1 font-mono text-xs text-slate">{interactionId}</p>
+          <p className="mx-auto mt-1 max-w-6xl font-mono text-xs text-slate">{interactionId}</p>
+        </div>
 
-          <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1fr)_400px]">
+        <div className="mx-auto max-w-6xl px-6 py-6">
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1fr)_400px]">
             <div className="space-y-8">
               <CallerLeadInfo />
               <QualificationChecklist />
