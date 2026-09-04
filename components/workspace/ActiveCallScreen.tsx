@@ -35,7 +35,7 @@ function LiveCallBadge() {
 export function ActiveCallScreen({ interactionId }: { interactionId: string }) {
   return (
     <RequireRole role="fronter">
-      <main className="min-h-screen bg-slate/5 px-6 py-8">
+      <main className="min-h-screen bg-shop-floor px-6 py-8">
         <div className="mx-auto max-w-5xl">
           <div className="flex items-center justify-between">
             <h1 className="text-2xl font-semibold tracking-tight text-ink">Active Call</h1>

@@ -48,7 +48,7 @@ function Dashboard() {
 
   if (load.status === 'loading') {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-paper">
+      <div className="flex min-h-screen items-center justify-center bg-shop-floor">
         <p className="text-sm text-slate">Loading your desk…</p>
       </div>
     )
@@ -56,7 +56,7 @@ function Dashboard() {
 
   if (load.status === 'error') {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-paper px-4">
+      <div className="flex min-h-screen items-center justify-center bg-shop-floor px-4">
         <div className="w-full max-w-sm">
           <Alert>{load.message}</Alert>
         </div>
@@ -69,7 +69,7 @@ function Dashboard() {
   const wrapUpCount = queue.filter((i) => i.status === 'wrap_up').length
 
   return (
-    <main className="min-h-screen bg-paper px-4 py-10 text-ink sm:px-6 lg:px-10">
+    <main className="min-h-screen bg-shop-floor px-4 py-10 text-ink sm:px-6 lg:px-10">
       <div className="mx-auto max-w-3xl">
         <div className="mb-8">
           <p className="text-sm text-slate">Welcome back</p>

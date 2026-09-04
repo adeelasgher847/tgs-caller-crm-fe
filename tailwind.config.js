@@ -8,6 +8,7 @@ module.exports = {
       colors: {
         ink: "#1C2430",
         paper: "#FCFCFC",
+        "shop-floor": "#EEF0F1",
         slate: "#8A94A3",
         navy: "#1F3A5F",
         chrome: "#8A94A3",
