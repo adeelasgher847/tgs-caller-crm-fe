@@ -48,15 +48,15 @@ function Dashboard() {
 
   if (load.status === 'loading') {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-neutral-950">
-        <p className="text-sm text-neutral-400">Loading your desk…</p>
+      <div className="flex min-h-screen items-center justify-center bg-paper">
+        <p className="text-sm text-slate">Loading your desk…</p>
       </div>
     )
   }
 
   if (load.status === 'error') {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-neutral-950 px-4">
+      <div className="flex min-h-screen items-center justify-center bg-paper px-4">
         <div className="w-full max-w-sm">
           <Alert>{load.message}</Alert>
         </div>
@@ -69,11 +69,11 @@ function Dashboard() {
   const wrapUpCount = queue.filter((i) => i.status === 'wrap_up').length
 
   return (
-    <main className="min-h-screen bg-neutral-950 px-4 py-10 text-white sm:px-6 lg:px-10">
+    <main className="min-h-screen bg-paper px-4 py-10 text-ink sm:px-6 lg:px-10">
       <div className="mx-auto max-w-3xl">
         <div className="mb-8">
-          <p className="text-sm text-neutral-400">Welcome back</p>
-          <h1 className="mt-0.5 text-2xl font-semibold tracking-tight">{user.name}</h1>
+          <p className="text-sm text-slate">Welcome back</p>
+          <h1 className="mt-0.5 text-2xl font-semibold tracking-tight text-ink">{user.name}</h1>
         </div>
 
         <div className="mb-8 grid grid-cols-2 gap-3 sm:grid-cols-3">
@@ -82,10 +82,10 @@ function Dashboard() {
           <StatTile label="Wrap-up" value={wrapUpCount} />
         </div>
 
-        <h2 className="mb-3 text-sm font-semibold text-white">Your queue</h2>
+        <h2 className="mb-3 text-sm font-semibold text-ink">Your queue</h2>
 
         {queue.length === 0 ? (
-          <p className="rounded-xl border border-white/10 bg-white/[0.03] px-4 py-8 text-center text-sm text-neutral-400">
+          <p className="rounded-xl border border-slate/20 bg-white px-4 py-8 text-center text-sm text-slate">
             No calls waiting right now.
           </p>
         ) : (

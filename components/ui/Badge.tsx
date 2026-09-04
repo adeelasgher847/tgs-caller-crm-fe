@@ -1,10 +1,10 @@
 import { ReactNode } from 'react'
 
 const TONES = {
-  neutral: 'bg-white/10 text-neutral-300',
-  teal: 'bg-teal-500/15 text-teal-300',
-  red: 'bg-red-500/15 text-red-300',
-  amber: 'bg-amber-500/15 text-amber-300',
+  neutral: 'bg-slate/10 text-slate',
+  teal: 'bg-status-green/10 text-status-green',
+  red: 'bg-status-red/10 text-status-red',
+  amber: 'bg-status-gold/10 text-status-gold',
 } as const
 
 export function Badge({

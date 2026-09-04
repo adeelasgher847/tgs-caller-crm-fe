@@ -35,13 +35,13 @@ export function LiveCallStatus({
       <div className="flex items-center gap-2">
         {status === 'active' && (
           <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal-400 opacity-75" />
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-teal-400" />
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-status-green opacity-75" />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-status-green" />
           </span>
         )}
         <Badge tone={STATUS_TONE[status]}>{STATUS_LABEL[status]}</Badge>
       </div>
-      <span className="font-mono text-sm tabular-nums text-neutral-300">{elapsed}</span>
+      <span className="font-mono text-sm tabular-nums text-slate">{elapsed}</span>
     </div>
   )
 }
